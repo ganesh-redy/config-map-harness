@@ -9,5 +9,5 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 5000
-  type: NodePort  # or LoadBalancer if using a cloud provider
+  type: LoadBalancer  # or LoadBalancer if using a cloud provider
 
