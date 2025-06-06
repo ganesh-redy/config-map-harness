@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-config-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-config
+  template:
+    metadata:
+      labels:
+        app: flask-config
+    spec:
+      containers:
+        - name: flask-container
+          image: ganesh6498/flask-config-app:latest  # Replace with your image name
+          ports:
+            - containerPort: 5000
+          volumeMounts:
+            - name: config-volume
+              mountPath: /config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: data-config
+
