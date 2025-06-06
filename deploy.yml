@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: flask-container
-          image: ganesh6498/flask-config-app:latest  # Replace with your image name
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"  # Replace with your image name
           ports:
             - containerPort: 5000
           volumeMounts:
