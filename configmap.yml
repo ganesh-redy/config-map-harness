@@ -4,6 +4,6 @@ metadata:
   name: data-config
 data:
   data.properties: |
-    name: ganesh
+    name: ganesh99
     age: 23
 
